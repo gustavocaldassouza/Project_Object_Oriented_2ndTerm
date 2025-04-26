@@ -2,13 +2,13 @@ using GamePieces;
 
 namespace Board
 {
-    class ChessBoard
+    public class ChessBoard
     {
-        ChessPiece[,] board;
+        public ChessPiece[,] Board;
 
         public ChessBoard()
         {
-            board = new ChessPiece[8, 8];
+            Board = new ChessPiece[8, 8];
         }
 
         public void SetUpBoard() { }
@@ -19,13 +19,13 @@ namespace Board
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (board[i, j] != null)
+                    if (Board[i, j] != null)
                     {
-                        Console.Write(board[i, j].GetType().Name + " ");
+                        Console.Write(Board[i, j].ToString() + " ");
                     }
                     else
                     {
-                        Console.Write(" ");
+                        Console.Write(". ");
                     }
                 }
                 Console.WriteLine();
