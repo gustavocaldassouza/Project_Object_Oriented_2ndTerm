@@ -50,11 +50,10 @@ namespace Utils
 
         public static ChessPiece PositionToPiece(ChessBoard board, string position)
         {
-            int file = FileCharToIdx(position[0]);
-            int rank = int.Parse(position[1].ToString());
-            int row = RankIntToIdx(rank);
+            int column = FileCharToIdx(position[0]);
+            int row = RankIntToIdx(int.Parse(position[1].ToString()));
 
-            return board.Board[row, file];
+            return board.Board[row, column];
         }
     }
 }
