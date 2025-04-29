@@ -22,41 +22,6 @@ namespace GamePieces
             int toRowIdx = BoardUtils.RankIntToIdx(int.Parse(toPosition[1].ToString()));
 
             List<string> possiblePositions = new List<string>();
-            // generate possible positions for king
-            // save possible positions in a list
-            // the king can move one space in any direction
-            // if (BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx)}{BoardUtils.RankIdxToInt(fromRowIdx - 1)}") == null)
-            // {
-            //     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx)}{BoardUtils.RankIdxToInt(fromRowIdx - 1)}"); // up
-            // }
-            // if (BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx)}{BoardUtils.RankIdxToInt(fromRowIdx + 1)}") == null)
-            // {
-            //     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx)}{BoardUtils.RankIdxToInt(fromRowIdx + 1)}"); // down
-            // }
-            // if (BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx - 1)}{BoardUtils.RankIdxToInt(fromRowIdx)}") == null)
-            // {
-            //     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx - 1)}{BoardUtils.RankIdxToInt(fromRowIdx)}"); // left
-            // }
-            // if (BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx + 1)}{BoardUtils.RankIdxToInt(fromRowIdx)}") == null)
-            // {
-            //     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx + 1)}{BoardUtils.RankIdxToInt(fromRowIdx)}"); // right
-            // }
-            // if (BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx - 1)}{BoardUtils.RankIdxToInt(fromRowIdx - 1)}") == null)
-            // {
-            //     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx - 1)}{BoardUtils.RankIdxToInt(fromRowIdx - 1)}"); // up left
-            // }
-            // if (BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx + 1)}{BoardUtils.RankIdxToInt(fromRowIdx - 1)}") == null)
-            // {
-            //     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx + 1)}{BoardUtils.RankIdxToInt(fromRowIdx - 1)}"); // up right
-            // }
-            // if (BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx - 1)}{BoardUtils.RankIdxToInt(fromRowIdx + 1)}") == null)
-            // {
-            //     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx - 1)}{BoardUtils.RankIdxToInt(fromRowIdx + 1)}"); // down left
-            // }
-            // if (BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx + 1)}{BoardUtils.RankIdxToInt(fromRowIdx + 1)}") == null)
-            // {
-            //     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx + 1)}{BoardUtils.RankIdxToInt(fromRowIdx + 1)}"); // down right
-            // }
 
             //Capture opponent's piece
             ChessPiece? up = BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx)}{BoardUtils.RankIdxToInt(fromRowIdx - 1)}");
