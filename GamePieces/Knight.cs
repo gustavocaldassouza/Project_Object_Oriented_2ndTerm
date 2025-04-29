@@ -11,6 +11,11 @@ namespace GamePieces
         {
         }
 
+        public override string ToString()
+        {
+            return Color.First().ToString().ToUpper() + "N";
+        }
+
         public override bool IsValidMove(ChessBoard board, string fromPosition, string toPosition)
         {
             throw new NotImplementedException();

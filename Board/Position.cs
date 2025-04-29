@@ -29,9 +29,9 @@ namespace Board
             return File + Rank.ToString();
         }
 
-        public bool IsEqual(Position other)
+        public override bool Equals(Object other)
         {
-            return this.Rank == other.Rank && this.File == other.File;
+            return this.Rank == ((Position)other).Rank && this.File == ((Position)other).File;
         }
     }
 }

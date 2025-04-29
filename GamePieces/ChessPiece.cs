@@ -3,34 +3,35 @@ using Interface;
 
 namespace GamePieces
 {
-    public abstract class ChessPiece : IMovable //classe base para as peças de xadrez nao posso usa sozinha
+    public abstract class ChessPiece : IMovable
     {
-
-        public string Name;
-        public string Color;
+        public string Name { get; set; }
+        public string Color { get; set; }
 
         public ChessPiece(string name, string color)
         {
-            Name = name;
-            Color = color;
+            if (name == "Knight" || name == "Bishop" || name == "Rook" || name == "Queen" || name == "King" || name == "Pawn")
+            {
+                Name = name;
+            }
+            else
+            {
+                Console.WriteLine("Invalid name. Use 'Knight', 'Bishop', 'Rook', 'Queen', 'King' or 'Pawn'.");
+            }
+            if (color == "white" || color == "black")
+            {
+                Color = color;
+            }
+            else
+            {
+                Console.WriteLine("Invalid color. Use 'white' or 'black'.");
+            }
         }
 
         public override string ToString()
         {
-            string symbol;
-
-            if (Name == "Knight") // criei essa condica pro cavalo nao confundir com o k de king
-            {
-                symbol = "N";
-            }
-            else
-            {
-                symbol = Name[0].ToString();
-            }
-
-            return Color[0].ToString() + symbol;
+            return Color.First().ToString().ToUpper() + Name.First().ToString().ToUpper();
         }
-
 
         public abstract bool IsValidMove(
             ChessBoard board,

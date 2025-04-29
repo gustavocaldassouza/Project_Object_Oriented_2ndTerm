@@ -5,7 +5,7 @@ namespace GamePieces
 {
     class King : ChessPiece
     {
-        public const int Points = int.MaxValue;
+        public const int Points = Int32.MaxValue;
 
         public King(string color) : base("King", color)
         {
