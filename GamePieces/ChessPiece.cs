@@ -10,7 +10,7 @@ namespace GamePieces
 
         public ChessPiece(string name, string color)
         {
-            if (name == "Knight" || name == "Bishop" || name == "Rook" || name == "Queen" || name == "King" || name == "Pawn")
+            if (name.ToLower() == "knight" || name.ToLower() == "bishop" || name.ToLower() == "rook" || name.ToLower() == "queen" || name.ToLower() == "king" || name.ToLower() == "pawn")
             {
                 Name = name;
             }
@@ -18,7 +18,7 @@ namespace GamePieces
             {
                 Console.WriteLine("Invalid name. Use 'Knight', 'Bishop', 'Rook', 'Queen', 'King' or 'Pawn'.");
             }
-            if (color == "white" || color == "black")
+            if (color.ToLower() == "white" || color.ToLower() == "black")
             {
                 Color = color;
             }
