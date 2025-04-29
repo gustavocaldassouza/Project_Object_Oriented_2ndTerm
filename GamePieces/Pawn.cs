@@ -42,11 +42,11 @@ namespace GamePieces
                 // Move diagonally to capture an opponent's piece
                 ChessPiece? rightCapture = BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx + 1)}{BoardUtils.RankIdxToInt(fromRowIdx - 1)}");
                 ChessPiece? leftCapture = BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx - 1)}{BoardUtils.RankIdxToInt(fromRowIdx - 1)}");
-                if (rightCapture != null && rightCapture.Color != this.Color)
+                if (rightCapture != null && rightCapture.Color != this.Color && rightCapture.Name != "Error")
                 {
                     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx + 1)}{BoardUtils.RankIdxToInt(fromRowIdx - 1)}");
                 }
-                if (leftCapture != null && leftCapture.Color != this.Color)
+                if (leftCapture != null && leftCapture.Color != this.Color && leftCapture.Name != "Error")
                 {
                     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx - 1)}{BoardUtils.RankIdxToInt(fromRowIdx - 1)}");
                 }
@@ -69,11 +69,11 @@ namespace GamePieces
                 // Move diagonally to capture an opponent's piece
                 ChessPiece? rightCapture = BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx - 1)}{BoardUtils.RankIdxToInt(fromRowIdx + 1)}");
                 ChessPiece? leftCapture = BoardUtils.PositionToPiece(board, $"{BoardUtils.FileIntToChar(fromColIdx + 1)}{BoardUtils.RankIdxToInt(fromRowIdx + 1)}");
-                if (rightCapture != null && rightCapture.Color != this.Color)
+                if (rightCapture != null && rightCapture.Color != this.Color && rightCapture.Name != "Error")
                 {
                     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx - 1)}{BoardUtils.RankIdxToInt(fromRowIdx + 1)}");
                 }
-                if (leftCapture != null && leftCapture.Color != this.Color)
+                if (leftCapture != null && leftCapture.Color != this.Color && leftCapture.Name != "Error")
                 {
                     possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx + 1)}{BoardUtils.RankIdxToInt(fromRowIdx + 1)}");
                 }

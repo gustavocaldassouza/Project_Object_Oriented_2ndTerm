@@ -5,7 +5,6 @@ using Utils;
 ChessBoard chessBoard = new ChessBoard();
 chessBoard.SetUpBoard();
 Console.WriteLine("Initial Chess Board Setup:");
-Console.WriteLine("  A B C D E F G H");
 chessBoard.DisplayBoard();
 Console.WriteLine();
 while (true)
@@ -20,7 +19,6 @@ while (true)
     {
         chessBoard.SetUpBoard();
         Console.WriteLine("Chess Board Reset:");
-        Console.WriteLine("  A B C D E F G H");
         chessBoard.DisplayBoard();
         continue;
     }
@@ -33,14 +31,13 @@ while (true)
             string fromPosition = positions[0];
             string toPosition = positions[1];
 
-            ChessPiece pawn = BoardUtils.PositionToPiece(chessBoard, fromPosition);
-            if (pawn != null && pawn.IsValidMove(chessBoard, fromPosition, toPosition))
+            ChessPiece piece = BoardUtils.PositionToPiece(chessBoard, fromPosition);
+            if (piece != null && piece.IsValidMove(chessBoard, fromPosition, toPosition))
             {
                 Console.WriteLine($"Valid move from {fromPosition} to {toPosition}");
-                pawn.MovePiece(chessBoard, fromPosition, toPosition);
+                piece.MovePiece(chessBoard, fromPosition, toPosition);
 
                 Console.WriteLine("After Move:");
-                Console.WriteLine("  A B C D E F G H");
                 chessBoard.DisplayBoard();
 
             }

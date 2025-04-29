@@ -43,13 +43,14 @@ namespace Board
 
         public void DisplayBoard()
         {
-            for (int i = 0; i < 8; i++)
+            for (int row = 0; row < 8; row++)
             {
-                for (int j = 0; j < 8; j++)
+                Console.Write(8 - row + " ");
+                for (int col = 0; col < 8; col++)
                 {
-                    if (Board[i, j] != null)
+                    if (Board[row, col] != null)
                     {
-                        Console.Write(Board[i, j].ToString() + " ");
+                        Console.Write(Board[row, col].ToString() + " ");
                     }
                     else
                     {
@@ -58,6 +59,7 @@ namespace Board
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("  A  B  C  D  E  F  G  H");
         }
     }
 }

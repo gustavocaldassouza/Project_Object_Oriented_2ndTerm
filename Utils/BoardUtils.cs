@@ -52,7 +52,10 @@ namespace Utils
         {
             int column = FileCharToIdx(position[0]);
             int row = RankIntToIdx(int.Parse(position[1].ToString()));
-
+            if (column < 0 || column > 7 || row < 0 || row > 7)
+            {
+                return new Error();
+            }
             return board.Board[row, column];
         }
     }
