@@ -2,31 +2,29 @@ namespace Board
 {
     public class Position
     {
-        public int Rank;
         public char File;
-
-        public Position(int rank, char file)
+        public int Rank;
+        public Position(char file, int rank)
         {
-            if (rank >= 1 && rank <= 8)
-            {
-                Rank = rank;
-            }
-            else
-            {
-                Rank = 1; 
-            }
-
             if (file >= 'A' && file <= 'H')
             {
                 File = file;
             }
             else
             {
-                File = 'A'; 
+                Console.WriteLine("Invalid file.");
+            }
+            if (rank >= 1 && rank <= 8)
+            {
+                Rank = rank;
+            }
+            else
+            {
+                Console.WriteLine("Invalid rank.");
             }
         }
 
-        public string Show()
+        public override string ToString()
         {
             return File + Rank.ToString();
         }
