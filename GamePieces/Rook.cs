@@ -13,11 +13,7 @@ namespace GamePieces
 
         public override bool IsValidMove(ChessBoard board, string fromPosition, string toPosition)
         {
-            Position positionFrom = new Position(fromPosition[0], fromPosition[1]);
-            Position positionTo = new Position(fromPosition[0], toPosition[1]);
-            List<string> validMoves = new List<string>();
-
-
+            throw new NotImplementedException("Rook movement logic not implemented yet.");
         }
 
         public override ChessPiece MovePiece(ChessBoard board, string fromPosition, string toPosition)
