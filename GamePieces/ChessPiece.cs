@@ -6,8 +6,8 @@ namespace GamePieces
 {
     public abstract class ChessPiece : IMovable
     {
-        public string Name { get; set; }
-        public string Color { get; set; }
+        public string? Name { get; set; }
+        public string? Color { get; set; }
 
         public ChessPiece(string name, string color)
         {
@@ -31,7 +31,7 @@ namespace GamePieces
 
         public override string ToString()
         {
-            return Color.First().ToString().ToUpper() + Name.First().ToString().ToUpper();
+            return Color!.First().ToString().ToUpper() + Name!.First().ToString().ToUpper();
         }
 
         public abstract bool IsValidMove(
@@ -53,7 +53,7 @@ namespace GamePieces
             int toRowIdx = BoardUtils.RankIntToIdx(int.Parse(toPosition[1].ToString()));
 
             board.Board[toRowIdx, toColIdx] = pieceFrom;
-            board.Board[fromRowIdx, fromColIdx] = null;
+            board.Board[fromRowIdx, fromColIdx] = null!;
 
             return pieceFrom;
         }

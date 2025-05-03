@@ -82,5 +82,19 @@ namespace Board
             }
             return Board[row, column];
         }
+
+        public string? IsValidPosition(ChessPiece basePiece, int col, int row)
+        {
+            if (row >= 0 && row < 8 && col >= 0 && col < 8)
+            {
+                ChessPiece piece = this.PositionToPiece(col, row);
+                if (piece != null && basePiece.Color != piece.Color || piece == null)
+                {
+                    var result = $"{BoardUtils.FileIntToChar(col)}{BoardUtils.RankIdxToInt(row)}";
+                    return result;
+                }
+            }
+            return null;
+        }
     }
 }

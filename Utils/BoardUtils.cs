@@ -1,6 +1,3 @@
-using GamePieces;
-using Board;
-
 namespace Utils
 {
     public static class BoardUtils

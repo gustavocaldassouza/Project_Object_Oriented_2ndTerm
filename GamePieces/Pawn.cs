@@ -16,39 +16,34 @@ namespace GamePieces
             int fromColIdx = BoardUtils.FileCharToIdx(fromPosition[0]);
             int fromRowIdx = BoardUtils.RankIntToIdx(int.Parse(fromPosition[1].ToString()));
 
-            List<ChessPiece> movePositions = new List<ChessPiece>();
+            var movePositions = new List<string>();
 
             if (this.Color == "White")
             {
-                movePositions.Add(board.PositionToPiece(fromColIdx, fromRowIdx - 1));
-                if (fromRowIdx == 6)
-                {
-                    movePositions.Add(board.PositionToPiece(fromColIdx, fromRowIdx - 2));
-                }
-                movePositions.Append(board.PositionToPiece(fromColIdx + 1, fromRowIdx - 1));
-                movePositions.Append(board.PositionToPiece(fromColIdx - 1, fromRowIdx - 1));
+                if (board.PositionToPiece(fromColIdx, fromRowIdx - 1) == null)
+                    movePositions.Add(board.IsValidPosition(this, fromColIdx, fromRowIdx - 1)!);
+                if (fromRowIdx == 6 && board.PositionToPiece(fromColIdx, fromRowIdx - 2) == null)
+                    movePositions.Add(board.IsValidPosition(this, fromColIdx, fromRowIdx - 2)!);
+
+                if (board.PositionToPiece(fromColIdx + 1, fromRowIdx - 1) != null)
+                    movePositions.Add(board.IsValidPosition(this, fromColIdx + 1, fromRowIdx - 1)!);
+                if (board.PositionToPiece(fromColIdx - 1, fromRowIdx - 1) != null)
+                    movePositions.Add(board.IsValidPosition(this, fromColIdx - 1, fromRowIdx - 1)!);
             }
             else
             {
-                movePositions.Add(board.PositionToPiece(fromColIdx, fromRowIdx + 1));
-                if (fromRowIdx == 1)
-                {
-                    movePositions.Add(board.PositionToPiece(fromColIdx, fromRowIdx + 2));
-                }
-                movePositions.Append(board.PositionToPiece(fromColIdx - 1, fromRowIdx + 1));
-                movePositions.Append(board.PositionToPiece(fromColIdx + 1, fromRowIdx + 1));
+                if (board.PositionToPiece(fromColIdx, fromRowIdx + 1) == null)
+                    movePositions.Add(board.IsValidPosition(this, fromColIdx, fromRowIdx + 1)!);
+                if (fromRowIdx == 1 && board.PositionToPiece(fromColIdx, fromRowIdx + 2) == null)
+                    movePositions.Add(board.IsValidPosition(this, fromColIdx, fromRowIdx + 2)!);
+
+                if (board.PositionToPiece(fromColIdx + 1, fromRowIdx + 1) != null)
+                    movePositions.Add(board.IsValidPosition(this, fromColIdx + 1, fromRowIdx + 1)!);
+                if (board.PositionToPiece(fromColIdx - 1, fromRowIdx + 1) != null)
+                    movePositions.Add(board.IsValidPosition(this, fromColIdx - 1, fromRowIdx + 1)!);
             }
 
-            List<string> possiblePositions = new List<string>();
-            foreach (ChessPiece piece in movePositions)
-            {
-                if (piece != null && piece.Color != this.Color && piece.Name != "Error" || piece == null)
-                {
-                    possiblePositions.Add($"{BoardUtils.FileIntToChar(fromColIdx)}{BoardUtils.RankIdxToInt(fromRowIdx)}");
-                }
-            }
-
-            return possiblePositions.Contains(toPosition.ToUpper());
+            return movePositions.Contains(toPosition.ToUpper());
         }
     }
 }

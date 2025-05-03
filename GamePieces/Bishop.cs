@@ -1,5 +1,4 @@
 using Board;
-using Interface;
 
 namespace GamePieces
 {

@@ -9,7 +9,7 @@ Console.WriteLine();
 while (true)
 {
     Console.WriteLine("Enter your move (e.g., e2 e4): ");
-    string move = Console.ReadLine()!;
+    var move = Console.ReadLine()!;
     if (move.ToLower() == "exit")
     {
         break;
@@ -37,6 +37,7 @@ while (true)
                 piece.MovePiece(chessBoard, fromPosition, toPosition);
 
                 Console.WriteLine("After Move:");
+                Console.Clear();
                 chessBoard.DisplayBoard();
 
             }
