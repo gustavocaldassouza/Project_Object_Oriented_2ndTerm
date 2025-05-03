@@ -1,5 +1,4 @@
 using Board;
-using GamePieces;
 
 namespace GamePieces
 {
@@ -12,11 +11,6 @@ namespace GamePieces
         public override bool IsValidMove(ChessBoard board, string fromPosition, string toPosition)
         {
             return false;
-        }
-
-        public override ChessPiece MovePiece(ChessBoard board, string fromPosition, string toPosition)
-        {
-            return this;
         }
     }
 }

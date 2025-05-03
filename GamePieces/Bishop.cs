@@ -16,9 +16,5 @@ namespace GamePieces
             throw new NotImplementedException();
         }
 
-        public override ChessPiece MovePiece(ChessBoard board, string fromPosition, string toPosition)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

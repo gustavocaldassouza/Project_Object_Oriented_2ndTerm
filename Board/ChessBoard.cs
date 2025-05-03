@@ -1,4 +1,5 @@
 using GamePieces;
+using Utils;
 
 namespace Board
 {
@@ -60,6 +61,26 @@ namespace Board
                 Console.WriteLine();
             }
             Console.WriteLine("  A  B  C  D  E  F  G  H");
+        }
+
+        public ChessPiece PositionToPiece(string position)
+        {
+            int column = BoardUtils.FileCharToIdx(position[0]);
+            int row = position[1] == '-' ? -1 : BoardUtils.RankIntToIdx(int.Parse(position[1].ToString()));
+            if (column < 0 || column > 7 || row < 0 || row > 7)
+            {
+                return new Error();
+            }
+            return Board[row, column];
+        }
+
+        public ChessPiece PositionToPiece(int column, int row)
+        {
+            if (column < 0 || column > 7 || row < 0 || row > 7)
+            {
+                return new Error();
+            }
+            return Board[row, column];
         }
     }
 }

@@ -1,5 +1,6 @@
 using Board;
 using Interface;
+using Utils;
 
 namespace GamePieces
 {
@@ -37,10 +38,24 @@ namespace GamePieces
             ChessBoard board,
             string fromPosition,
             string toPosition);
-        public abstract ChessPiece MovePiece(
+
+        public ChessPiece MovePiece(
             ChessBoard board,
             string fromPosition,
             string toPosition
-        );
+        )
+        {
+            ChessPiece pieceFrom = board.PositionToPiece(fromPosition);
+
+            int fromColIdx = BoardUtils.FileCharToIdx(fromPosition[0]);
+            int fromRowIdx = BoardUtils.RankIntToIdx(int.Parse(fromPosition[1].ToString()));
+            int toColIdx = BoardUtils.FileCharToIdx(toPosition[0]);
+            int toRowIdx = BoardUtils.RankIntToIdx(int.Parse(toPosition[1].ToString()));
+
+            board.Board[toRowIdx, toColIdx] = pieceFrom;
+            board.Board[fromRowIdx, fromColIdx] = null;
+
+            return pieceFrom;
+        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Board;
 using GamePieces;
-using Utils;
 
 ChessBoard chessBoard = new ChessBoard();
 chessBoard.SetUpBoard();
@@ -31,7 +30,7 @@ while (true)
             string fromPosition = positions[0];
             string toPosition = positions[1];
 
-            ChessPiece piece = BoardUtils.PositionToPiece(chessBoard, fromPosition);
+            ChessPiece piece = chessBoard.PositionToPiece(fromPosition);
             if (piece != null && piece.IsValidMove(chessBoard, fromPosition, toPosition))
             {
                 Console.WriteLine($"Valid move from {fromPosition} to {toPosition}");
