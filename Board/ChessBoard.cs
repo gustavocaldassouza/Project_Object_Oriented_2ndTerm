@@ -93,6 +93,7 @@ namespace Board
                     var result = $"{BoardUtils.FileIntToChar(col)}{BoardUtils.RankIdxToInt(row)}";
                     return result;
                 }
+                return string.Empty;
             }
             return null;
         }
