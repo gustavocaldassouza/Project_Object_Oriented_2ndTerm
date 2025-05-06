@@ -21,15 +21,17 @@ namespace GamePieces
             int fromColIdx = BoardUtils.FileCharToIdx(fromPosition[0]);
             int fromRowIdx = BoardUtils.RankIntToIdx(int.Parse(fromPosition[1].ToString()));
 
-            var movePositions = new List<string>();
-            movePositions.Add(board.IsValidPosition(this, fromColIdx + 1, fromRowIdx - 2)!);
-            movePositions.Add(board.IsValidPosition(this, fromColIdx - 1, fromRowIdx - 2)!);
-            movePositions.Add(board.IsValidPosition(this, fromColIdx + 1, fromRowIdx + 2)!);
-            movePositions.Add(board.IsValidPosition(this, fromColIdx - 1, fromRowIdx + 2)!);
-            movePositions.Add(board.IsValidPosition(this, fromColIdx + 2, fromRowIdx - 1)!);
-            movePositions.Add(board.IsValidPosition(this, fromColIdx - 2, fromRowIdx - 1)!);
-            movePositions.Add(board.IsValidPosition(this, fromColIdx + 2, fromRowIdx + 1)!);
-            movePositions.Add(board.IsValidPosition(this, fromColIdx - 2, fromRowIdx + 1)!);
+            var movePositions = new List<string>
+            {
+                board.IsValidPosition(this, fromColIdx + 1, fromRowIdx - 2)!,
+                board.IsValidPosition(this, fromColIdx - 1, fromRowIdx - 2)!,
+                board.IsValidPosition(this, fromColIdx + 1, fromRowIdx + 2)!,
+                board.IsValidPosition(this, fromColIdx - 1, fromRowIdx + 2)!,
+                board.IsValidPosition(this, fromColIdx + 2, fromRowIdx - 1)!,
+                board.IsValidPosition(this, fromColIdx - 2, fromRowIdx - 1)!,
+                board.IsValidPosition(this, fromColIdx + 2, fromRowIdx + 1)!,
+                board.IsValidPosition(this, fromColIdx - 2, fromRowIdx + 1)!
+            };
 
             return movePositions.Contains(toPosition.ToUpper());
         }
