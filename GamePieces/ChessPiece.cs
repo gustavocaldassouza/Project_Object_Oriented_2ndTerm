@@ -9,7 +9,7 @@ namespace GamePieces
         public string? Name { get; set; }
         public string? Color { get; set; }
 
-        public ChessPiece(string name, string color)
+        protected ChessPiece(string name, string color)
         {
             if (name.ToLower() == "knight" || name.ToLower() == "bishop" || name.ToLower() == "rook" || name.ToLower() == "queen" || name.ToLower() == "king" || name.ToLower() == "pawn" || name.ToLower() == "error")
             {
