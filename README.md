@@ -40,6 +40,7 @@ This project is a complete chess game implementation built as part of an Object-
 ## 🎮 How to Play
 
 1. **Run the Application**:
+
    ```bash
    dotnet run
    ```
@@ -56,19 +57,23 @@ This project is a complete chess game implementation built as part of an Object-
 ## 🏛️ Object-Oriented Design Principles
 
 ### Inheritance
+
 - `ChessPiece` serves as the abstract base class
 - All specific pieces (Bishop, King, Knight, etc.) inherit from `ChessPiece`
 - Common functionality is implemented in the base class
 
 ### Polymorphism
+
 - Each piece implements its own `IsValidMove()` method
 - The `MovePiece()` method works with any piece type through polymorphism
 
 ### Interface Implementation
+
 - `IMovable` interface defines the contract for movable pieces
 - `ChessPiece` implements `IMovable` interface
 
 ### Encapsulation
+
 - Private fields and public properties with controlled access
 - Utility methods are properly encapsulated in their respective classes
 
@@ -82,6 +87,7 @@ This project is a complete chess game implementation built as part of an Object-
 ## 🎯 Learning Objectives
 
 This project demonstrates:
+
 - Abstract classes and inheritance
 - Interface implementation
 - Method overriding and polymorphism
@@ -93,18 +99,22 @@ This project demonstrates:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - .NET 8.0 SDK or later
 - A terminal or command prompt
 
 ### Installation
+
 1. Clone the repository
 2. Navigate to the project directory
 3. Run the application:
+
    ```bash
    dotnet run
    ```
 
 ### Building
+
 ```bash
 dotnet build
 ```
@@ -112,21 +122,11 @@ dotnet build
 ## 🎮 Game Rules
 
 The implementation follows standard chess rules:
+
 - Each piece moves according to its traditional movement patterns
 - Move validation prevents illegal moves
 - Pieces cannot move through other pieces (except knights)
 - Capturing is handled by moving to occupied squares
-
-## 📝 Future Enhancements
-
-Potential improvements could include:
-- Check and checkmate detection
-- Castling implementation
-- En passant capture
-- Pawn promotion
-- Game state persistence
-- Two-player support with turn management
-- GUI implementation
 
 ## 👨‍💻 Author
 
